@@ -1,0 +1,31 @@
+.container {
+    background-color: #FFFFFF;
+    border: 2px solid black;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.hero {
+    border: 2px solid black;
+    height: 70vh;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.footer {
+    border: 2px solid black;
+    height: 30vh;
+}
+
+.leftHero {
+    width: 50%;
+    border: 7px solid black;
+    height: 100%;
+}
+
+.rightHero {
+    width: 50%;
+    border: 7px solid black;
+    height: 100%;
+}

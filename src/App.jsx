@@ -1,12 +1,11 @@
-import { useState } from 'react'
-
 import './App.css'
+import Login from './pages/Auth/Login'
 
 function App() {
 
   return (
     <div>
-      Food Delivery App
+      <Login />
     </div>
   )
 }
