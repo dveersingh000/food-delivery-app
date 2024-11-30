@@ -7,52 +7,134 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 15px;
+    /* gap: 15px; */
 }
 
 .hero {
-    border: 2px solid black;
-    height: 70vh;
+    height: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    gap: 15px;
     padding: 15px;
 }
 
 .footer {
-    border: 2px solid black;
-    height: 30vh;
+    height: 30%;
+    background-color: #D9D9D9;
 }
 
 .leftHero {
     width: 50%;
-    border: 5px solid black;
     height: 100%;
 }
 
 .rightHero {
     width: 50%;
-    border: 4px solid black;
     height: 100%;
     overflow: hidden;
 }
 
 .rightHero img {
-    max-width: 100%;
+    /* max-width: 100%; */
     /* max-height: 100%; */
     border-radius: 24px;
-    
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .heroText {
-    /* padding: 100px; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    margin: 100px;
+    justify-content: space-between;
+    width: 51%;
+    height: 90%;
+    margin-top: 3%;
+    margin-left: 24%;
+}
+
+.section_1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section_2 h2{
+    font-family: Poppins;
+    font-weight: 600;
+    color: #0C1421;
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 10px;
+}
+.section_2 p{
+    font-family: Poppins;
+    font-weight: 400;
+    color: #313957;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.section_3 {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #0C1421;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 3px;
+}
+
+input {
+    border: 1px solid #00000066;
+    border-radius: 100px;
+    padding: 8px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input::placeholder {
+    font-family: Poppins;
+    font-weight: 400;
+    color: #8897AD;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FC8A06;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.section_4 {
+    text-align: center;
+}
+.section_4 p {
+    font-family: Poppins;
+    font-weight: 400;
+    color: #313957;
+    font-size: 18px;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.section_4 span {
+    color: #FC8A06;
+    cursor: pointer;
 }
