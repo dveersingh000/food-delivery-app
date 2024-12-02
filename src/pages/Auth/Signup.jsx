@@ -3,7 +3,7 @@ import styles from "./Signup.module.css";
 import logo from "../../assets/images/Art.png";
 import orderLogo from "../../assets/images/orderLogo.png";
 import AppleLogo from "../../assets/images/Apple.png";
-import PlayStoreLogo from "../../assets/images/PlayStore.png";
+import PlayStoreLogo from "../../assets/images/Playstore.png";
 import FacebookLogo from "../../assets/icons/Facebook.png";
 import InstagramLogo from "../../assets/icons/Instagram.png";
 import TikTokLogo from "../../assets/icons/TikTok.png";
