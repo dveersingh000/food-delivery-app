@@ -3,6 +3,7 @@ import styles from './HomePage.module.css'
 import DownloadLogo from '../../assets/icons/Download.png';
 import LocationLogo from '../../assets/icons/Location.png';
 import CartIconLogo from '../../assets/icons/CartIcon.png';
+import Navbar from '../../components/Navbar/Navbar';
 
 export default function HomePage() {
   return (
@@ -16,7 +17,7 @@ export default function HomePage() {
             <button><img src={CartIconLogo} alt="" />My Cart<img src={DownloadLogo} alt="" /></button>
         </div>
       </div>
-      <nav className={styles.section_2}>Navbar</nav>
+      <nav className={styles.section_2}><Navbar /></nav>
       <div className={styles.section_3}></div>
       <div className={styles.section_4}></div>
       <div className={styles.section_5}></div>
