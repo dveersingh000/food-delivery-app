@@ -8,8 +8,14 @@ import FacebookLogo from "../../assets/icons/Facebook.png";
 import InstagramLogo from "../../assets/icons/Instagram.png";
 import TikTokLogo from "../../assets/icons/TikTok.png";
 import SnapchatLogo from "../../assets/icons/Snapchat.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleGoSignup = () => {
+    navigate('/signup');
+  };
   return (
     // <>
       <div className={styles.container}>
@@ -32,11 +38,11 @@ export default function Login() {
                 <input type="text" placeholder="Example@email.com" />
                 <label className="password">Password</label>
                 <input type="text" placeholder="At least 8 characters" />
-                <button>Sign In</button>
+                <button >Sign In</button>
               </div>
               <div className={styles.section_4}>
                 <p>
-                  Don't you have an account? <span>Sign up</span>
+                  Don't you have an account? <span onClick={handleGoSignup}>Sign up</span>
                 </p>
               </div>
             </div>

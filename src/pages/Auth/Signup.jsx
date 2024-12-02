@@ -8,8 +8,14 @@ import FacebookLogo from "../../assets/icons/Facebook.png";
 import InstagramLogo from "../../assets/icons/Instagram.png";
 import TikTokLogo from "../../assets/icons/TikTok.png";
 import SnapchatLogo from "../../assets/icons/Snapchat.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+  const navigate = useNavigate();
+
+  const handleGoLogin = () => {
+    navigate('/login');
+  };
   return (
     // <>
       <div className={styles.container}>
@@ -40,7 +46,7 @@ export default function Signup() {
               </div>
               <div className={styles.section_4}>
                 <p>
-                  Already have an account? <span>Sign in</span>
+                  Already have an account? <span onClick={handleGoLogin}>Sign in</span>
                 </p>
               </div>
             </div>
