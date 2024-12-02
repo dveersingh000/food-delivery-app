@@ -85,6 +85,10 @@
     flex-direction: column;
 }
 
+.section_3 button:hover {
+  background-color: #e57800;
+}
+
 label {
     color: #0C1421;
     font-family: Poppins;
@@ -122,6 +126,8 @@ button {
     font-weight: 600;
     font-size: 20px;
     line-height: 20px;
+    cursor: pointer;
+    border: none;
 }
 
 .section_4 {
