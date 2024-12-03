@@ -1,6 +1,5 @@
 .container {
     background-color: #FFFFFF;
-    border: 2px solid black;
     width: 100vw;
     height: 900px;
     box-sizing: border-box;
@@ -21,11 +20,6 @@
     padding: 15px;
 }
 
-.footer {
-    /* height: 30%; */
-    height: 50%;
-    background-color: #D9D9D9;
-}
 
 .leftHero {
     width: 50%;
@@ -147,196 +141,24 @@ button {
     cursor: pointer;
 }
 
-.footer_1 {
-    height: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
-.footer_2 {
-    background-color: #03081F;
-    height: 20%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer_2 p {
-    font-family: Poppins;
-    font-weight: 400;
-    color: #FFFFFF;
-    font-size: 15px;
-    line-height: 16px;
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .signupLink {
+    color: #007bff;
     cursor: pointer;
-}
-
-
-.footer_1_1 p {
-    font-family: Poppins;
-    font-weight: 400;
-    color: #000000;
-    font-size: 16px;
-    line-height: 16px;
-}
-
-.footer_1_1 {
-    width: 30%;
-    padding-left: 80px;
-}
-
-.footer_2_2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-}
-
-.footer_button button {
-    background-color: #000000;
-    width: 175px;
-    height: 60px;
-    color: #FFFFFF;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-right: 1px;
-}
-
-.footer_button img {
-    width: 25px;
-    height: 25px;
-    flex-shrink: 0;
-    /* margin-right: 10px; */
-    /* padding-bottom: 5px; */
-    
-}
-
-.footer_button p {
-    color: #FFFFFF;
-    display: inline-block;
-
-}
-
-.footer_button span {
-    font-weight: 600;
-    font-size: large;
-    line-height: 1;
-}
-
-.footer_container {
-    display: flex;
-    justify-content: space-around;
-    /* max-width: 1200px; */
-    /* margin: 0 auto; */
-    /* flex-wrap: wrap; */
-    width: 70%;
-  }
-  
-  .footer_section {
-    /* flex: 1; */
-    min-width: 250px;
-    margin: 50px;
-  }
-
-  .footer_section:nth-of-type(2) {
-    min-width: 170px;
-  }
-  .footer_section:nth-of-type(3) {
-    min-width: 170px;
-  }
-  
-  .footer_section h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    font-weight: 700;
-  }
-  
-  .subscription_form {
-    display: flex;
-    align-items: center;
-  }
-  
-  .subscription_form input {
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 50px;
-    outline: none;
-    flex: 1;
-    background-color: #cbcaca;
-    
-  }
-
-  .subscription_form input::placeholder {
-    color: #00000099;
-    font-weight: 400;
-  }
-  
-  .subscription_form button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #FC8A06;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 18px;
-  }
-  
-  .subscription_form button:hover {
-    background-color: #e57800;
-  }
-  
-  .footer_section p {
-    font-size: 15px;
-    color: #03081F;
-    margin: 10px 0;
-    /* line-height: 40px; */
-    font-weight: 400;
-  }
-  
-  .footer_section a {
-    color: #03081F;
-    font-weight: 400;
-    font-size: 15px;
-    text-decoration: underline;
-    
-  }
-  
-  .footer_section a:hover {
     text-decoration: underline;
   }
   
-  .social_icons {
-    margin-top: 10px;
+  .signupLink:hover {
+    color: #0056b3;
   }
   
-  .social_icons a {
-    margin-right: 10px;
-    display: inline-block;
+  button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
   }
-  
-  .social_icons img {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .footer_section ul {
-    list-style: none;
-    /* padding: 0; */
-  }
-  
-  .footer_section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer_section ul li a {
-    color: #000000;
-    text-decoration: underline;
-    font-size: 15px;
-    font-weight: 400;
-  }
-  
-  .footer_section ul li a:hover {
-    text-decoration: underline;
-  }
-

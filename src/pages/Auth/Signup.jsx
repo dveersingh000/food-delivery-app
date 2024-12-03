@@ -1,118 +1,135 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Signup.module.css";
 import logo from "../../assets/images/Art.png";
 import orderLogo from "../../assets/images/orderLogo.png";
-import AppleLogo from "../../assets/images/Apple.png";
-import PlayStoreLogo from "../../assets/images/Playstore.png";
-import FacebookLogo from "../../assets/icons/Facebook.png";
-import InstagramLogo from "../../assets/icons/Instagram.png";
-import TikTokLogo from "../../assets/icons/TikTok.png";
-import SnapchatLogo from "../../assets/icons/Snapchat.png";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+import { signup } from "../../apis/auth";
 
 export default function Signup() {
   const navigate = useNavigate();
 
-  const handleGoLogin = () => {
-    navigate('/login');
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
+    if (!formData.phone.trim() || !/^\d{10}$/.test(formData.phone))
+      newErrors.phone = "Enter a valid 10-digit phone number.";
+    if (
+      !formData.email.trim() ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+    )
+      newErrors.email = "Enter a valid email address.";
+    if (!formData.password.trim() || formData.password.length < 8)
+      newErrors.password = "Password must be at least 8 characters long.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSignup = async () => {
+    if (!validate()) return;
+
+    try {
+      const response = await signup(formData);
+      alert("Signup successful!");
+      navigate("/login");
+    } catch (error) {
+      console.error("Signup failed:", error);
+      alert("Signup failed. Please try again.");
+    }
+  };
+
+  const handleGoLogin = () => {
+    navigate("/login");
+  };
+
   return (
-    // <>
-      <div className={styles.container}>
-        <div className={styles.hero}>
-          <div className={styles.leftHero}>
-            <div className={styles.heroText}>
-              <div className={styles.section_1}>
-                <img src={orderLogo} alt="" />
-              </div>
-              <div className={styles.section_2}>
-                <h2>Welcome Back  👋</h2>
-                <p>
-                  Today is a new day. It's your day. You shape it.
-                  <br />
-                  Sign in to start ordering.
-                </p>
-              </div>
-              <div className={styles.section_3}>
-                <label >Name</label>
-                <input type="text" placeholder="eg. John A" />
-                <label >Phone Number</label>
-                <input type="text" placeholder="Enter your 10 digit mobile numberAt least 8 characters" />
-                <label >Email</label>
-                <input type="text" placeholder="Example@email.com" />
-                <label >Password</label>
-                <input type="text" placeholder="At least 8 characters" />
-                <button>Continue</button>
-              </div>
-              <div className={styles.section_4}>
-                <p>
-                  Already have an account? <span onClick={handleGoLogin}>Sign in</span>
-                </p>
-              </div>
+    <div className={styles.container}>
+      <div className={styles.hero}>
+        <div className={styles.leftHero}>
+          <div className={styles.heroText}>
+            <div className={styles.section_1}>
+              <img src={orderLogo} alt="" />
             </div>
-          </div>
-          <div className={styles.rightHero}>
-            <img src={logo} alt="" />
+            <div className={styles.section_2}>
+              <h2>Welcome 👋</h2>
+              <p>
+                Today is a new day. It's your day. You shape it.
+                <br />
+                Sign up to start ordering.
+              </p>
+            </div>
+            <div className={styles.section_3}>
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="e.g., John A"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              {errors.name && <p className={styles.error}>{errors.name}</p>}
+
+              <label>Phone Number</label>
+              <input
+                type="text"
+                name="phone"
+                placeholder="Enter your 10-digit phone number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              {errors.phone && <p className={styles.error}>{errors.phone}</p>}
+
+              <label>Email</label>
+              <input
+                type="text"
+                name="email"
+                placeholder="example@email.com"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {errors.email && <p className={styles.error}>{errors.email}</p>}
+
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="At least 8 characters"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              {errors.password && <p className={styles.error}>{errors.password}</p>}
+
+              <button onClick={handleSignup}>Continue</button>
+            </div>
+            <div className={styles.section_4}>
+              <p>
+                Already have an account?{" "}
+                <span onClick={handleGoLogin} className={styles.loginLink}>
+                  Sign in
+                </span>
+              </p>
+            </div>
           </div>
         </div>
-        <div className={styles.footer}>
-            <div className={styles.footer_1}>
-                <div className={styles.footer_1_1}>
-                <img src={orderLogo} alt="" />
-                <div className={styles.footer_button}>
-                    <button><img src={AppleLogo} alt="apple logo" /><p>&nbsp;&nbsp;Download on the<br /><span>App Store</span></p></button>
-                    <button><img src={PlayStoreLogo} alt="playstore logo" /><p>GET IT ON<br /><span>&nbsp;&nbsp;&nbsp;Google Play</span></p></button>
-                </div>
-                <p>Company # 490039-445, Registered with <br /> House of companies.</p>
-                </div>
-                <div className={styles.footer_container}>
-                <div className={styles.footer_section}>
-                    <h4>Get Exclusive Deals in your Inbox</h4>
-                    <div className={styles.subscription_form}>
-                       <input type="email" placeholder="youremail@gmail.com" />
-                       <button type="button">Subscribe</button>
-                     </div>
-                     <p>we won't spam, read our <a href="#">email policy</a></p>
-                     <div className={styles.social_icons}>
-                      <a href="#"><img src={FacebookLogo} alt="Facebook"/></a>
-                      <a href="#"><img src={InstagramLogo} alt="Instagram"/></a>
-                      <a href="#"><img src={TikTokLogo} alt="TikTok"/></a>
-                      <a href="#"><img src={SnapchatLogo} alt="Snapchat"/></a>
-                    </div>
-                </div>
-                <div className={styles.footer_section}>
-                <h4>Legal Pages</h4>
-                <ul>
-                   <li><a href="#">Terms and conditions</a></li>
-                   <li><a href="#">Privacy</a></li>
-                   <li><a href="#">Cookies</a></li>
-                   <li><a href="#">Modern Slavery Statement</a></li>
-                 </ul>
-                </div>
-                <div className={styles.footer_section}>
-                    <h4>Important Links</h4>
-                    <ul>
-                      <li><a href="#">Get help</a></li>
-                      <li><a href="#">Add your restaurant</a></li>
-                      <li><a href="#">Sign up to deliver</a></li>
-                      <li><a href="#">Create a business account</a></li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-            <div className={styles.footer_2}>
-                <div>
-                    <p>Order.uk Copyright 2024, All Rights Reserved.</p>
-                </div>
-                <div className={styles.footer_2_2}>
-                    <p>Privacy Policy</p>
-                    <p>Terms</p>
-                    <p>Pricing</p>
-                    <p>Do not sell or share my personal information</p>
-                </div>
-            </div>
+        <div className={styles.rightHero}>
+          <img src={logo} alt="" />
         </div>
       </div>
-    // </>
+      <Footer />
+    </div>
   );
 }
